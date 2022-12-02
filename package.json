@@ -6,10 +6,9 @@
   "scripts": {
     "watch": "tsc -b ./tsconfig.json -w",
     "build": "tsc -b ./tsconfig.json",
-    "preall": "npm run build",
-    "all": "node dist/index.js --all",
-    "preday1": "npm run build",
-    "day1": "node dist/index.js --day 1",
+    "postbuild": "copyfiles -u 1 src/**/*.dat dist/",
+    "prestart": "npm run build",
+    "start": "node dist/index.js --day",
     "test": "jest",
     "test:coverage": "cross-env NODE_ENV=test jest --coverage"
   },
@@ -26,6 +25,7 @@
   "devDependencies": {
     "@types/jest": "^29.2.3",
     "@types/line-reader": "0.0.34",
+    "copyfiles": "^2.4.1",
     "jest": "^29.3.1",
     "line-reader": "^0.4.0",
     "lodash": "^4.17.21",
