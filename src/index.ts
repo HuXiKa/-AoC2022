@@ -1,7 +1,7 @@
 function main() {
 
     const args = process.argv.slice(2)
-    } else if (args.length >= 2 && args[0] == '--day') {
+    if (args.length >= 2 && args[0] == '--day') {
         runDay(args[1], args[2])
     } else {
         console.log("invalid args")
@@ -20,7 +20,7 @@ async function runDay(day: string, part: string | undefined) {
     if (p.includes("2")) {
         console.log(" part2: ")
         s.part2(parsedInput)
-    }    
+    }
 }
 
 main()
